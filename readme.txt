@@ -1,6 +1,3 @@
-# TCE-GPT
-TCEGPT is a AI-powered assistant that provides info on courses, events, faculties and campus life. Simplifying your TCE experience in just a chat!
-
 chat.py
 Step 1 : We have to install the respective packages
          [Make sure you have latest python version]

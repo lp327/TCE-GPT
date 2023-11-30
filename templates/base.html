@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='slider.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/chat_profile.png') }}">
+    <title>Thiagarajar College of Engineering</title>
+</head>
+<body>
+    <!-- STYLE -->
+    <style>
+        .list-ui{list-style: none; background-color: #830000; color: aliceblue; display: flex; width: 100%; justify-content: end;}
+        .list2-ui{list-style: none; display: flex; width: 100%; justify-content: end;}
+        .icon-list{display: flex; flex-direction: row;}
+        li{padding: 10px;}
+    </style>
+
+    <!-- NAV BAR -->
+    <div style="margin: 0px;">
+        <ul class="list-ui">
+            <li>GApps@TCE</li>
+            <li>Life@TCE</li>
+            <li>TCE MOOCs</li>
+            <li>TCENet</li>
+            <li>TCECources</li>
+            <li>Students</li>
+            <li>Alumini</li>
+            <li>Quick links</li>
+            <li>Contact</li>
+            <li>Search on TCE</li>
+        </ul>
+    </div>
+
+
+    <!-- HEADER - 2 -->
+    <div class="icon-list">
+        <img src="{{ url_for('static', filename='images/logo.svg') }}" style="width: 300px; margin-left: 10px; margin-right: 60px; "/>
+        <div style="justify-content: end; margin-top: 20px; margin-right: 30px;">
+            <ul class="list2-ui">
+                <li>About us</li>
+                <li>Academics</li>
+                <li>Admission</li>
+                <li>Exams</li>
+                <li>Research</li>
+                <li>Industry</li>
+                <li>Placements</li>
+                <li>Nodal Centres</li>
+                <li>NIRF</li>
+                <li>IQAC</li>
+                <li>ARIIF</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function startSpeechRecognition() {
+            const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+            const textInput = document.getElementById('textInput');
+    
+            recognition.onresult = function (event) {
+                const transcript = event.results[0][0].transcript;
+                textInput.value += transcript;
+            };
+    
+            recognition.onerror = function (event) {
+                console.error('Speech recognition error:', event.error);
+            };
+    
+            recognition.onend = function () {
+                console.log('Speech recognition ended.');
+            };
+    
+            recognition.start();
+        }
+    </script>
+    
+
+
+
+<!-- SLIDER -->
+<style>
+    * {box-sizing: border-box;}
+    body {font-family: Verdana, sans-serif;}
+    .mySlides {display: none;}
+    img {vertical-align: middle;}
+    
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+    
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .active {
+      background-color: #717171;
+    }
+    
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .text {font-size: 11px}
+    }
+    </style>
+    
+    <div class="slideshow-container">
+    
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="{{ url_for('static', filename='images/Slide1.png') }}" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="{{ url_for('static', filename='images/Slide2.png') }}" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="{{ url_for('static', filename='images/Slide3.png') }}" style="width:100%">
+    </div>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+    </script>
+    
+
+
+<!-- CHAT BOT UI -->
+<div class="container">
+    <div class="chatbox" style="background-image: url('images/chat_profile.png');">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="{{ url_for('static', filename='images/chat_profile.png') }}" style="width: 30px;"/>
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">TCE GPT</h4>
+                    <p class="chatbox__description--header">Hi there, ask any type of question</p>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div></div>
+            </div>
+            <div class="chatbox__footer">
+              <input id="textInput" rows="4" cols="50"></input>
+               <button onclick="startSpeechRecognition()"><img src="{{ url_for('static', filename='images/mic.png') }}" style="border-radius: 30px; width: 30px;"/></button>
+                <button class="chatbox__send--footer send__button"><img src="{{ url_for('static', filename='images/arrow.png') }}" style="border-radius: 30px; width: 30px;"/></button>
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button><img src="{{ url_for('static', filename='images/chat.png') }}" style="border-radius: 30px; width: 30px;"/></button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='slide.js') }}"></script>
+
+</body>
+</html>
